@@ -12,6 +12,8 @@ use App\Models\User;
 // path to Concept Model Class.
 use App\Models\Concept;
 
+// path to TestCase Model Class.
+use App\Models\TestCase;
 
 // UDC Problem inherits Model Class
 class Problem extends Model
@@ -31,15 +33,21 @@ class Problem extends Model
         'concept_id'
     ];
 
-    // () -> related user
+    // () -> get related user
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // () -> related concept
+    // () -> get related concept
     public function concept()
     {
         return $this->belongsTo(Concept::class);
+    }
+
+    // () -> get testcases of it.
+    public function testCases()
+    {
+        return $this->hasMany(TestCase::class);
     }
 }
