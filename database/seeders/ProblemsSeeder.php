@@ -127,7 +127,7 @@ class ProblemsSeeder extends Seeder
                 }
             PHP,
             'function_name' => 'getToastMessage',
-            'function_type' => 'single_param',
+            'function_type' => 'multi_param',
             'hints' => 'should work for any product name passed',
             'user_id' => $admin->id
         ]);
