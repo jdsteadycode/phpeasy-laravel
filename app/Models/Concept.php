@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 // path to ConceptContent Class
 use App\Models\ConceptContent;
 
+// path to Problem Class
+use App\Models\Problem;
+
 // UDC Concept inheriting from Model Class
 class Concept extends Model
 {
@@ -24,5 +27,12 @@ class Concept extends Model
     {
         // i.e., one concept has exactly one content..
         return $this->hasOne(ConceptContent::class);
+    }
+
+    // () -> get problems
+    public function problems()
+    {
+        // i.e., concept has various problems..
+        return $this->hasMany(Problem::class);
     }
 }
