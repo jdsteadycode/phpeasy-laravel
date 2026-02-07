@@ -15,6 +15,9 @@ use App\Models\Concept;
 // path to TestCase Model Class.
 use App\Models\TestCase;
 
+// path to Submission Model Class.
+use App\Models\Submission;
+
 // UDC Problem inherits Model Class
 class Problem extends Model
 {
@@ -49,5 +52,11 @@ class Problem extends Model
     public function testCases()
     {
         return $this->hasMany(TestCase::class);
+    }
+
+    // () -> get submissions of it.
+    public function submissions()
+    {
+        return $this->hasMany(Submission::class);
     }
 }
