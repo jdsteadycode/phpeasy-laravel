@@ -10,6 +10,12 @@ use Illuminate\Notifications\Notifiable;
 // path to Problem Class.
 use App\Models\Problem;
 
+// path to Submission Class.
+use App\Models\Submission;
+
+// path to ConceptProgress Class.
+use App\Models\ConceptProgress;
+
 // UDC User inherits Authenticable class
 class User extends Authenticatable
 {
@@ -54,5 +60,17 @@ class User extends Authenticatable
     public function problems()
     {
         return $this->hasMany(Problem::class);
+    }
+
+    // () -> get submissions
+    public function submissions()
+    {
+        return $this->hasMany(Submission::class);
+    }
+
+    // () -> get concept progress
+    public function progresses()
+    {
+        return $this->hasMany(ConceptProgress::class);
     }
 }
