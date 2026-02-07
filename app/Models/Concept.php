@@ -12,6 +12,9 @@ use App\Models\ConceptContent;
 // path to Problem Class
 use App\Models\Problem;
 
+// path to ConceptProgress Class.
+use App\Models\ConceptProgress;
+
 // UDC Concept inheriting from Model Class
 class Concept extends Model
 {
@@ -34,5 +37,12 @@ class Concept extends Model
     {
         // i.e., concept has various problems..
         return $this->hasMany(Problem::class);
+    }
+
+    // () -> get progress
+    public function progresses()
+    {
+        // i.e., each concept has it's progress
+        return $this->hasMany(ConceptProgress::class);
     }
 }
